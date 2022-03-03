@@ -1,0 +1,11 @@
+@import "../../styles/vars";
+
+.footer_container {
+  // width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: black;
+  color: white;
+}
