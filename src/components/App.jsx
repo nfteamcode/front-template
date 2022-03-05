@@ -35,6 +35,10 @@ function App() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(HelloNftAddress, HelloNft.abi, provider);
 
+      let connectedAccount = await window.ethereum.selectedAddress;
+      if (connectedAccount) {
+        setUserAccount(connectedAccount);
+      } else { setErrors({code: 1001, msg: ''})}
       try {
         const cost = await contract.cost();
         const totalSupply = await contract.totalSupply();
@@ -54,6 +58,9 @@ function App() {
 
   const handleMint = async(quantity) => {
     if (typeof window.ethereum !== 'undefined') { 
+      if (!userAccount) {
+        return setErrors({ code: 1002, msg: "Please connect your wallet before mint" });
+      }
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(HelloNftAddress, HelloNft.abi, signer);
@@ -65,6 +72,7 @@ function App() {
         }
         const tx = await contract.mint(quantity, overrides);
         await tx.wait();
+        setErrors(null);
         fetchData();
        
       } catch (err) {
@@ -86,6 +94,7 @@ function App() {
              method: "eth_requestAccounts",
            });
           if (account) {
+            setErrors(null);
             setUserAccount(account[0]);
           } else {
             setErrors({code: 1000, msg: "Unable to fetch your account."})
@@ -104,8 +113,6 @@ function App() {
           setErrors({ code: err.code, msg: err.message });
           return err
         });
-
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
     } else {
       setErrors({
         code: 1001,
