@@ -8,7 +8,6 @@ function Minter(props) {
   const data = props.Data;
   const handleMint = props.HandleMint;
   const errors = props.Errors;
-  const handleConnect = props.HandleConnect;
 
   useEffect(() => {
     
@@ -34,12 +33,6 @@ function Minter(props) {
     await handleMint(quantity).then((res) => {
       console.log(res);
     })
-  };
-
-  const _handleConnect = async () => {
-    await handleConnect().then((res) => {
-      console.log(res);
-    });
   };
 
   if (errors) {

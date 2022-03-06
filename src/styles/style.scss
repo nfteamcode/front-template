@@ -1,12 +1,34 @@
 @import "vars";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color1: #000000;
+    --color2: #ffffff;
+    --color3: #d02561;
+    --color4: #04091a;
+    --color5: #707070;
+    --nav-primary-color: #112121;
+    --fourth-color: #8f8f8f;
+    --primary-font: 'Inria Serif', serif;
+    --secondary-font: 'Arapey', serif;
+}
+
+
+html {
+    font-size: 16px;
+}
 body {
   margin: $bodyMargin;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {

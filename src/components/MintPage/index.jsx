@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import HelloNft from '../artifacts/contracts/HelloNft.sol/HelloNft.json';
-import Header from './Header/Header.jsx';
-import Minter from './Minter/Minter.jsx';
-import Footer from "./Footer/Footer.jsx";
+import HelloNft from '../../artifacts/contracts/HelloNft.sol/HelloNft.json';
+import Header from './Header';
+import Minter from './Minter';
+import Footer from "./Footer";
 
-import './app.scss';
+import './mintPage.scss';
 
-function App() {
+function MintPage() {
   const [errors, setErrors] = useState(null);
   const [data, setData] = useState({});
   const [userAccount, setUserAccount] = useState('');
@@ -156,4 +156,4 @@ function App() {
   );
 }
 
-export default App;
+export default MintPage;
