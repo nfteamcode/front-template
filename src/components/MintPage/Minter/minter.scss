@@ -1,7 +1,11 @@
 @import "../../../styles/vars";
 
 .minter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 40%;
+  height: 400px;
   margin: $gutter * 4 auto;
 
   .minter__title {
@@ -13,47 +17,55 @@
     font-weight: 700;
   }
 
-  .minter__container{
+  .minter__button__container {
+    height: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .minter__button__container {
-      height: 50px;
-      display: flex;
-      justify-content: center;
-    
-      .minter__amount {
-        width: 90%;
-        margin: 0 4px;
-        padding-bottom: 1%;
-        text-align: center;
-        border: solid 2px $primary_color;
-        font-family: $secondary_font;
-        font-weight: 700;
-        font-size: 2.25rem;
-        line-height: 2.5rem;
-        border-radius: 10px;
-      }
-
-      .minter__quantity {
-        width: 5%;
-        border: solid 2px primary_color;
-        color: $text_color;
-        font-family: $secondary_font;
-        padding: 0 0 1% 0;
-        cursor: pointer;
-      }
+    justify-content: center;
+  
+    .minter__amount {
+      width: 90%;
+      margin: 0 4px;
+      padding-bottom: 1%;
+      text-align: center;
+      border: solid 4px  var(--color3);
+      font-family: $secondary_font;
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      border-radius: 10px;
     }
 
+    .minter__quantity {
+      width: 5%;
+      border: solid 2px primary_color;
+      color: $text_color;
+      font-family: $secondary_font;
+      padding: 0 0 1% 0;
+      cursor: pointer;
+    }
     .minter__trigger {
       height: 50px;
       margin-bottom: 20px;
-      background-color: $primary_color;
+      background-color:  var(--color3);
       align-self: center;
       font-size: 1.5em;
       font-weight: bold;
       text-transform: none;
     }
   }
+}
+
+@media all and (max-width: 789px) {
+
+.minter {
+   width: 70%;
+}
+
+}
+@media all and (max-width: 480px) {
+
+.minter {
+   width: 90%;
+}
+
 }

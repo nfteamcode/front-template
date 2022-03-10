@@ -139,8 +139,8 @@ function MintPage() {
   });
 
   return (
-    <div className="app">
-      <div className="container">
+    <div className="mint">
+      <div className="mint__container">
         <Header HandleConnect={handleConnect} UserAddress={userAccount} />
         {errors && <p className="error">{errors.msg}</p>}
         <Minter
