@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Nav from "./Nav";
+import Slider from "react-slick";
 import './home.scss';
 
-import img7 from "../../img/7.png";
-import img5 from "../../img/5.png";
-import img6 from "../../img/6.png";
+import logo from "../../img/deus_logo.png";
+import demo from "../../img/zeus.png";
 
 function Loading({ children }) {
   return <section className="loading">{children}</section>;
@@ -15,8 +15,13 @@ function Hero({ children }) {
   return <section className="hero">{children}</section>;
 }
 
-function Logo({ children }) {
-  return <div className="logo">{children}</div>;
+function Logo({children}) {
+  return (
+    <div className="logo">
+      {children}
+      <img src={logo} alt="logo" />
+    </div>
+  );
 }
 
 function Navigation({ children }) {
@@ -35,16 +40,29 @@ function Btn({ children }) {
   return <button className="btn">{children}</button>;
 }
 
+function Socials({ children }) {
+  return <div className="socials">{children}</div>;
+}
+
+const settings = {
+  autoplay: true,
+  accessibility: false,
+  infinite: true,
+  centermode: true,
+  // adaptiveHeight: true,
+  autoplaySpeed: 1,
+  speed: 2000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 
 function Home() {
-
   const el = useRef();
-  const q = gsap.utils.selector(el);
-
   // store the timeline in a ref.
   const tl = useRef();
 
   useEffect(() => {
+    const q = gsap.utils.selector(el);
     tl.current = gsap
       .timeline()
       .to(q(".loading"), {
@@ -78,35 +96,18 @@ function Home() {
       .to(q(".loading"), {
         display: "none",
       });
-    
   }, []);
-
 
   return (
     <div className="el" ref={el}>
       <Loading></Loading>
-
       <Hero>
-        <Logo>MekaVerse</Logo>
-        {/* <Socials>
-          <ul>
-            <li>
-              <a href="#" target="_blank">
-                <i className="fab fa-discord"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-          </ul>
-        </Socials> */}
+        <Logo />
         <Navigation />
         <div className="heroG">
           <div>
             <HeroH1>
-              Welcome on <span className="red">MekaVerse</span>
+              Welcome to <span className="red">D£US</span>
             </HeroH1>
             <HeroGp>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -131,6 +132,29 @@ function Home() {
           </a>
         </div>
       </section>
+      <div className="slider_top"></div>
+      <div className="each_slide">
+        <Slider {...settings}>
+          <div>
+            <img src={demo} alt="pic" />
+          </div>
+          <div>
+            <img src={demo} alt="pic" />
+          </div>
+          <div>
+            <img src={demo} alt="pic" />
+          </div>
+          <div>
+            <img src={demo} alt="pic" />
+          </div>
+          <div>
+            <img src={demo} alt="pic" />
+          </div>
+          <div>
+            <img src={demo} alt="pic" />
+          </div>
+        </Slider>
+      </div>
       <div className="roadmap">
         <div className="container">
           <h2 data-aos="zoom-in">
@@ -187,41 +211,51 @@ function Home() {
           <div className="team__flex">
             <div className="member" data-aos="zoom-in">
               <h4>
-                Ben / <span className="job">Blockchain Developper</span>
+                Ponzi.gg / <span className="job">Developper</span>
               </h4>
-              <img src={img5} alt="Ben" />
+              <img src={demo} alt="Ben" />
             </div>
             <div className="member" data-aos="zoom-in">
               <h4>
-                Marc / <span className="job">Designer</span>
+                Overlizee / <span className="job">Designer</span>
               </h4>
-              <img src={img6} alt="Marc" />
+              <img src={demo} alt="Marc" />
             </div>
             <div className="member" data-aos="zoom-in">
               <h4>
-                Matt / <span className="job">Marketer</span>
+                Gryser / <span className="job">Marketer</span>
               </h4>
-              <img src={img7} alt="Matt" />
+              <img src={demo} alt="Matt" />
+            </div>
+            <div className="member" data-aos="zoom-in">
+              <h4>
+                Elliot69 / <span className="job">Marketer</span>
+              </h4>
+              <img src={demo} alt="Matt" />
             </div>
           </div>
         </div>
       </div>
-      <footer>
-        <div className="container">
-          <div className="footer__flex">
-            <div className="footerG">MekaVerse</div>
-            <div className="footerD">
-              <ul>
-                <li>
-                  <a href="#">Link</a>
-                </li>
-                <li>
-                  <a href="#">Link</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <footer className="footer">
+        <div className="footer__g">
+          <a href="#">Contact</a>
+          <a href="#">Terms&Conditions</a>
         </div>
+        <p>Copyright &copy; 2022</p>
+        <Socials>
+          <ul>
+            <li>
+              <a href="#" target="_blank">
+                <i className="fab fa-discord"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+        </Socials>
       </footer>
     </div>
   );

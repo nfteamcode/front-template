@@ -14,9 +14,12 @@ nav {
 /* Toggle */
 
 .toggle {
+    background-color: var(--color1);
     color: var(--color2);
+    padding: 10px;
+    border-radius: 10px;
     font-size: 2rem;
-    position: absolute;
+    position: fixed;
     top: 1rem;
     right: 1rem;
     z-index: 20;
@@ -42,14 +45,19 @@ nav {
 /* Menu */
 
 .menu {
-    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 19;
     display: flex;
 }
 
 .menu__left, .menu__right {
     width: 50%;
     height: 100%;
-    background: var(--nav-primary-color);
+    background: var(--color1);
     transition: transform 0.5s;
 }
 
@@ -60,6 +68,7 @@ nav {
 }
 
 .menu__left {
+    position: sticky;
     transform: translateX(-100%);
 }
 
@@ -132,11 +141,31 @@ nav {
 /* Sep */
 
 .sep {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  background: transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    background-color: var(--color3);
 }
+.anime {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    // background: transparent;
+    // z-index: 22;
+}
+
+// .animeMob {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     height: 100vh;
+//     width: 100vw;
+//     background: transparent;
+//     z-index: 22;
+// }
 
 .sep__icon {
     width: 7rem;
@@ -157,13 +186,20 @@ nav {
 }
 
 /* Hero */
-
-.hero {
-    background: url('../../../img/4.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
+// @media all and (max-width: 968px) {
+//     .anime {
+//         display: none;
+//     }
+//     .animeMob {
+//         display: block;
+//         position: absolute;
+//         top: 0;
+//         bottom: 0;
+//         height: 100vh;
+//         width: 100vw;
+//         background: transparent;
+//     }
+// }
 
 @media all and (max-width: 767px) {
     .menu__right, .sep__icon {
@@ -175,7 +211,7 @@ nav {
     }
 
     .sep {
-      width: 50px;
-      left: 0;
+        width: 0;
+        left: 0;
     } 
 }

@@ -1,30 +1,33 @@
 @import "../../styles/vars";
 
 
-.app {
+.mint {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: $primary_font;
-}
-
-h1 {
-    font-family: $secondary_font;
-}
-
-.container {
+  .mint__container {
   width: 100%;
   margin: 0 auto;
 
-  .error {
-    color: $error_color;
+    h1 {
+      font-family: $secondary_font;
+    }
+
+    .error {
+      color: $error_color;
+    }
   }
+
 }
+
+// html {
+//   font-size: 16px;
+// }
+
+// body {
+//   font-family: $primary_font;
+// }
+
+

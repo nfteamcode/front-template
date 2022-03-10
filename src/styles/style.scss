@@ -9,7 +9,7 @@
 :root {
     --color1: #000000;
     --color2: #ffffff;
-    --color3: #d02561;
+    --color3: #1A79B8;
     --color4: #04091a;
     --color5: #707070;
     --nav-primary-color: #112121;
@@ -23,12 +23,14 @@ html {
     font-size: 16px;
 }
 body {
+  overflow-x: hidden;
+  box-sizing: border-box;
   margin: $bodyMargin;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  
 }
 
 code {
