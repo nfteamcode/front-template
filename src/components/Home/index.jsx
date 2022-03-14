@@ -6,6 +6,7 @@ import './home.scss';
 
 import logo from "../../img/deus_logo.png";
 import demo from "../../img/zeus.png";
+import rightPic from "../../img/zeus.jpg";
 
 function Loading({ children }) {
   return <section className="loading">{children}</section>;
@@ -120,7 +121,9 @@ function Home() {
             </a>
           </div>
         </div>
-        <div className="heroD"></div>
+        <div className="heroD">
+          <img src={rightPic} />
+        </div>
       </Hero>
       <section className="discord">
         <div className="container">
@@ -211,25 +214,32 @@ function Home() {
           <div className="team__flex">
             <div className="member" data-aos="zoom-in">
               <h4>
-                Ponzi.gg / <span className="job">Developper</span>
+                Achilles<br />
+                <span className="job">Marketing & Development</span>
               </h4>
               <img src={demo} alt="Ben" />
             </div>
             <div className="member" data-aos="zoom-in">
               <h4>
-                Overlizee / <span className="job">Designer</span>
+                Heracles
+                <br />
+                <span className="job">Marketing & Development</span>
               </h4>
               <img src={demo} alt="Marc" />
             </div>
             <div className="member" data-aos="zoom-in">
               <h4>
-                Gryser / <span className="job">Marketer</span>
+                Perseus
+                <br />
+                <span className="job">Business Analyst</span>
               </h4>
               <img src={demo} alt="Matt" />
             </div>
             <div className="member" data-aos="zoom-in">
               <h4>
-                Elliot69 / <span className="job">Marketer</span>
+                Odysseus
+                <br />
+                <span className="job">Project Manager</span>
               </h4>
               <img src={demo} alt="Matt" />
             </div>
